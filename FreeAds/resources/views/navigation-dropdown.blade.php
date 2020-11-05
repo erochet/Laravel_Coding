@@ -9,7 +9,15 @@
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
-
+<!-----------------------------------------modif---------------------------------------------------->
+<div>
+    <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a href="{{route('annonce')}}" class="nav-link">Ajouter une annonce</a>
+                </li>
+    </ul>
+    </div>
+<!-----------------------------------------modif---------------------------------------------------->
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
@@ -113,15 +121,7 @@
             </div>
         </div>
     </div>
-<!-----------------------------------------modif---------------------------------------------------->
 
-<div>
-            <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                        <achref="" class="nav-link">Ajouter une annonce</a>
-                        </li>
-            </ul>
-            </div>
 
 
 
@@ -133,9 +133,13 @@
             </x-jet-responsive-nav-link>
         </div>
 
+
+
+
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
+                
                 <div class="flex-shrink-0">
                     <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                 </div>
@@ -146,7 +150,13 @@
                 </div>
             </div>
 
+
             <div class="mt-3 space-y-1">
+
+
+
+
+
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
@@ -168,6 +178,9 @@
                         {{ __('Logout') }}
                     </x-jet-responsive-nav-link>
                 </form>
+
+
+
 
                 <!-- Team Management -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
