@@ -31,7 +31,7 @@ class CreateAdsTable extends Migration
 
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('region_id')->references('id')->on('regions');
-            $table->foreign('creator_id')->references('id')->on('users');
+            //$table->foreign('creator_id')->references('id')->on('users');
         });
     }
 
