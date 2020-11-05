@@ -113,6 +113,17 @@
             </div>
         </div>
     </div>
+<!-----------------------------------------modif---------------------------------------------------->
+
+<div>
+            <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                        <achref="" class="nav-link">Ajouter une annonce</a>
+                        </li>
+            </ul>
+            </div>
+
+
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
