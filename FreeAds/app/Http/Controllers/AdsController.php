@@ -32,14 +32,14 @@ class AdsController extends Controller
                 'price' => 'required|max:7',
                 'commune' => 'required|max:35',
             ]);
-            $Ads = new Ads;
-            $Ads->title = $request->title;
-            $Ads->description = $request->description;
-            $Ads->category_id = $request->category_id;
-            $Ads->price = $request->price;
-            $Ads->commune = $request->commune;
-            $Ads->save();
-            return back()->with('message', "L'annonce' a bien été créée !");
+            $ads = new Ads;
+            $ads->title = $request->title;
+            $ads->description = $request->description;
+            $ads->category_id = $request->category_id;
+            $ads->price = $request->price;
+            $ads->commune = $request->commune;
+            $ads->save();
+            return back()->with('message', "L'annonce a bien été créée !");
         }
 
 
@@ -51,21 +51,17 @@ class AdsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Ads $ads)
     {
-        //
+        return view('ads.show', compact('ads'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+
+
+    public function edit(Ads $ads)
+{
+    return view('ads.edit', compact('ads'));
+}
 
     /**
      * Update the specified resource in storage.
@@ -74,9 +70,22 @@ class AdsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Ads $ads)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|max:100',
+            'description' => 'required|max:500',
+            'category_id' => 'required|max:20',
+            'price' => 'required|max:7',
+            'commune' => 'required|max:35',
+        ]);
+        $ads->title = $request->title;
+        $ads->description = $request->description;
+        $ads->category_id = $request->category_id;
+        $ads->price = $request->price;
+        $ads->commune = $request->commune;
+        $ads->save();
+        return back()->with('message', "L'annonce a bien été modifiée !");        
     }
 
     /**

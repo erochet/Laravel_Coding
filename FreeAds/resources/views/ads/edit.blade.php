@@ -1,0 +1,54 @@
+
+                  <x-app-layout>
+                    <x-slot name="header">
+                        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                            Modification d'une tâche
+                        </h2>
+                    </x-slot>    
+                    <div class="py-12">
+                      <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+                        <div class="w-full sm:max-w-lg mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                          <x-jet-validation-errors class="mb-4" />
+                          @if (session()->has('message'))
+                            <div class="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3">
+                              {{ session('message') }}
+                            </div>
+                          @endif
+                          <form action="{{ route('ads.update', $ads->id) }}" method="post">
+                              @csrf
+                              @method('put')
+                              <div class="mt-4">
+                                  <x-jet-label value="Titre" />
+                                  <x-jet-input class="block mt-1 w-full" type="text" id=title name="title" :value="old('title', $ads->title)" placeholder="Titre de l'annonce" required autofocus />
+                              </div>
+                              <div class="mt-4">
+                                  <x-jet-label value="Description" />
+                                  <textarea class="form-input rounded-md shadow-sm mt-1" style="width: 100%" id="description" name="description" placeholder="Détail de l'annonce">{{ old('description', $ads->detail) }}</textarea>
+                              </div>
+                              
+                              <div class="mt-4">
+                                <x-jet-label value="Catégorie" />
+                                <x-jet-input class="block mt-1 w-full" style="width: 100%" id=category_id name="category_id" placeholder="Catégorie de l'annonce" required autofocus />
+                            </div>
+                              
+                            <div class="mt-4">
+                              <x-jet-label value="Prix" />
+                              <x-jet-input class="block mt-1 w-full" style="width: 100%" id=price name="price" placeholder="Prix de l'annonce" required autofocus />
+                          </div>
+                              
+                          <div class="mt-4">
+                            <x-jet-label value="Ville" />
+                            <x-jet-input class="block mt-1 w-full" style="width: 100%" id=commune name="commune" placeholder="Ville de l'annonce" required autofocus />
+                        </div>
+
+                              <div class="flex items-center justify-end mt-4">
+                                  <x-jet-button class="ml-4">
+                                      Envoyer
+                                  </x-jet-button>
+                              </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                </x-app-layout>
