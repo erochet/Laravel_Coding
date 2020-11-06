@@ -21,12 +21,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-//Route::get('/annonces', 'Adscontroller@create')->name('ad.create');
 
 use App\Http\Controllers\AdsController;
-Route::get('/annonce', [AdsController::class, 'index'])->name('annonce');
+//Route::get('/annonce', [AdsController::class, 'index'])->name('annonce');
+Route::resource('ads', AdsController::class)->middleware('auth');
 
-
-/*Route::get('/annonce', function () {
-    return view('create');
-})->name('ad.create');
