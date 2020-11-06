@@ -60,4 +60,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+            /**
+         * Get the ads for the user.
+         */
+        public function ads()
+        {
+            return $this->hasMany(Ad::class);
+        }
+
 }
