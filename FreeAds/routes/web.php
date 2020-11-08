@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/welcome');
+});
+
+Route::get('/fifa', function () {
+    return view('pages/fifa');
+});
+
+Route::get('/scenic', function () {
+    return view('pages/scenic');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

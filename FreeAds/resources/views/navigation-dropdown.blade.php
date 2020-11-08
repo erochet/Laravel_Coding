@@ -117,8 +117,8 @@
 
 <div>
             <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                        <achref="" class="nav-link">Ajouter une annonce</a>
+                        <li class="nav-item active">
+                        <a href="#" class="nav-link">Ajouter une annonce</a>
                         </li>
             </ul>
             </div>
