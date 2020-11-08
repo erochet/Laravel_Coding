@@ -31,6 +31,11 @@
                     <x-jet-input class="block mt-1 w-full" type="text" id=category_id name="category_id" :value="old('category_id')" placeholder="Catégorie de l'annonce" required autofocus />
                 </div>
 
+                  <div class="mt-4">
+                    <x-jet-label value="Image" />
+                    <x-jet-input class="block mt-1 w-full" type="text" id=picture name="picture" :value="old('picture')" placeholder="Fichier image de l'annonce" required autofocus />
+                </div>
+
                 <div class="mt-4">
                   <x-jet-label value="Prix" />
                   <x-jet-input class="block mt-1 w-full" type="text" id=price name="price" :value="old('price')" placeholder="Prix de l'annonce" required autofocus />

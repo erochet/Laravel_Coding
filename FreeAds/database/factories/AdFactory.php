@@ -1,15 +1,24 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Factories;
 
-use Illuminate\Database\Seeder;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
-class DatabaseSeeder extends Seeder
+class AdsFactory extends Factory
 {
     /**
-     * Seed the application's database.
+     * The name of the factory's corresponding model.
      *
-     * @return void
+     * @var string
+     */
+    protected $model = Ad::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
      */
     public function run()
     {
@@ -22,4 +31,6 @@ class DatabaseSeeder extends Seeder
             'comune' => Str::random(10),
         ]);
     }
+
+
 }

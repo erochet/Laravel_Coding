@@ -3,3 +3,85 @@
 @import 'tailwindcss/utilities';
 
 
+.grille
+{
+    max-width: 1800px;
+    width: 80%;
+    /*border: 1px solid #333;*/
+    height: auto;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    grid-gap: 50px;
+    margin-top: 12%;
+}
+
+
+
+.grid-item
+{
+width: 308px;
+height: 400px;
+/*border: 1px solid #333;*/
+}
+
+.img{
+    width: 306px;
+    height: 260px;
+    display: grid;
+  }
+
+  .BoxInfos
+  {
+    /*border: 1px solid #333;*/
+    width: 280px;
+    height: 100px;
+  }
+
+  .BoxInfosGAuche
+  {
+    /*border: 1px solid #333;*/
+    width: 308px;
+    height: 40px;
+    color: rgb(250, 244, 236);
+  }
+
+  .BoxInfosDroite
+  {
+    /*border: 1px solid #333;*/
+  
+    flex-direction: row-reverse;
+    display: flex;
+    width: 308px;
+    height: 100px;
+  }
+
+  
+
+.nomMeuble
+{
+  /*margin-top: 10px;*/
+  font-size:17px;
+  font-weight: 700;
+  font-family:Lato;
+  color: blanchedalmond;
+}
+
+.prixMeuble
+{
+  font-size:18px;
+  font-family:Lato;
+  /*margin-top: 10px;*/
+  text-align: right;
+}
+
+#left
+{
+float: left;
+}
+
+#right
+{
+float: right;
+}

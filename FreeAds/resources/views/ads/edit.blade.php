@@ -14,31 +14,36 @@
                               {{ session('message') }}
                             </div>
                           @endif
-                          <form action="{{ route('ads.update', $ads->id) }}" method="post">
+                          <form action="{{ route('ads.update', $ad->id) }}" method="post">
                               @csrf
                               @method('put')
                               <div class="mt-4">
                                   <x-jet-label value="Titre" />
-                                  <x-jet-input class="block mt-1 w-full" type="text" id=title name="title" :value="old('title', $ads->title)" placeholder="Titre de l'annonce" required autofocus />
+                                  <x-jet-input class="block mt-1 w-full" type="text" id=title name="title" :value="old('title', $ad->title)" placeholder="Titre de l'annonce" required autofocus />
                               </div>
                               <div class="mt-4">
                                   <x-jet-label value="Description" />
-                                  <textarea class="form-input rounded-md shadow-sm mt-1" style="width: 100%" id="description" name="description" placeholder="Détail de l'annonce">{{ old('description', $ads->detail) }}</textarea>
+                                  <textarea class="form-input rounded-md shadow-sm mt-1" style="width: 100%" id="description" name="description" placeholder="Détail de l'annonce">{{ old('description', $ad->description) }}</textarea>
                               </div>
                               
                               <div class="mt-4">
                                 <x-jet-label value="Catégorie" />
-                                <x-jet-input class="block mt-1 w-full" style="width: 100%" id=category_id name="category_id" placeholder="Catégorie de l'annonce" required autofocus />
+                                <x-jet-input class="block mt-1 w-full" style="width: 100%" id=category_id name="category_id" :value="old('category_id', $ad->category_id)" placeholder="Catégorie de l'annonce" required autofocus />
                             </div>
                               
                             <div class="mt-4">
+                              <x-jet-label value="Image" />
+                              <x-jet-input class="block mt-1 w-full" style="width: 100%" id=picture name="picture" :value="old('picture', $ad->picture)" placeholder="Catégorie de l'annonce" required autofocus />
+                          </div>
+                              
+                            <div class="mt-4">
                               <x-jet-label value="Prix" />
-                              <x-jet-input class="block mt-1 w-full" style="width: 100%" id=price name="price" placeholder="Prix de l'annonce" required autofocus />
+                              <x-jet-input class="block mt-1 w-full" style="width: 100%" id=price name="price" :value="old('price', $ad->price)" placeholder="Prix de l'annonce" required autofocus />
                           </div>
                               
                           <div class="mt-4">
                             <x-jet-label value="Ville" />
-                            <x-jet-input class="block mt-1 w-full" style="width: 100%" id=commune name="commune" placeholder="Ville de l'annonce" required autofocus />
+                            <x-jet-input class="block mt-1 w-full" style="width: 100%" id=commune name="commune" :value="old('commune', $ad->commune)" placeholder="Ville de l'annonce" required autofocus />
                         </div>
 
                               <div class="flex items-center justify-end mt-4">

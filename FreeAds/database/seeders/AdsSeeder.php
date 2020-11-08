@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use App\Models\Ad;
+
 class AdsSeeder extends Seeder
 {
     /**
@@ -13,6 +15,9 @@ class AdsSeeder extends Seeder
      */
     public function run()
     {
-        
+        Ad::factory()
+                ->times(20)
+                ->create();
     }
+    
 }
