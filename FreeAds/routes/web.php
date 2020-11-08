@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdsControllers;
+use App\Http\Controllers\userControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::resource('Ads','App\Http\Controllers\AdController');
+Route::resource('users','App\Http\Controllers\userController');
